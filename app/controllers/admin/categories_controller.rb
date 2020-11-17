@@ -1,5 +1,5 @@
 class Admin::CategoriesController < ApplicationController
-  before_filter :authorize
+  before_filter :http_basic_authenticate
 
   def index
     @categories = Category.order(id: :desc).all

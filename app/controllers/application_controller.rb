@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
     cookies[:cart]
   end
 
-  before_filter :http_basic_authenticate
+  # before_filter :http_basic_authenticate
 
 def http_basic_authenticate
   authenticate_or_request_with_http_basic do |username, password|
