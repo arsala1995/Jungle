@@ -26,9 +26,11 @@ RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
     # VERIFY
     expect(page).to have_css 'article.product', count: 10
     
-    first(:link, "Details").trigger("click")
+    first(:button, "Add").trigger("click")
+    sleep 2
+    find(:link, "My Cart (1)").trigger("click")
     sleep 2
     
-    # save_screenshot "details.png"
+    save_screenshot "cart.png"
   end
 end
